@@ -1,0 +1,74 @@
+.detailContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 50px;
+
+}
+
+.detailCard{
+    background: #1F2124;
+    box-shadow: 1px 1px 24px 4px #B1E8CD;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    
+}
+.name{
+    font-family: "Varela Round", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F6B352;
+    background-color: rgb(119, 5, 148);
+    margin: auto;
+    border-radius: 25px;
+    width: 70%;
+}
+
+.details ul {
+      padding: 0;
+      margin: 20px 0 50px 0;
+      list-style-type: none;
+      color: white;
+}
+
+.details ul li {
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: 100;
+        font-family: fantasy;
+}
+
+.details ul li span {
+    padding-right: 10px;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.btn{
+    display: block;
+    background: #F6B352;
+    color: white;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-right: 125px;
+    padding-left: 125px;
+}
+
+.btn:hover{
+    background: #F68657;
+}

@@ -1,0 +1,66 @@
+.countryCard{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    
+} 
+  
+.card {
+    width: 300px;
+    height: 480px;
+    background: #95e7b7;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    border: 2px solid #8b09ac;
+
+    /* #B8F9D3 */
+
+  }
+
+.card h2 {
+    font-family: "Varela Round", sans-serif;
+    font-size: 25px;
+    color: #08c7d4;
+    margin: auto;
+    background-color: #770594;
+    border-radius: 25px;
+    width: 55%;
+    
+    box-shadow: -1px -1px 14px 4px rgba(150,22,209,0.64);
+    -webkit-box-shadow: -1px -1px 14px 4px rgba(150,22,209,0.64);
+    -moz-box-shadow: -1px -1px 14px 4px rgba(150,22,209,0.64);
+}
+
+.card h3{
+  font-family: "Varela Round", sans-serif;
+  font-size: 20px;
+  color: #08c7d4;
+  text-decoration: none;
+
+}
+  
+.card:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 5px 5px 20px 3px #E81010;
+}
+
+.textCard{
+  width: 30%;
+  height: 5%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  background-color: rgb(139, 9, 172);
+  border-radius: 25px;
+
+  box-shadow: -1px -1px 14px 4px rgba(150,22,209,0.64);
+  -webkit-box-shadow: -1px -1px 14px 4px rgba(150,22,209,0.64);
+  -moz-box-shadow: -1px -1px 14px 4px rgba(150,22,209,0.64);
+}

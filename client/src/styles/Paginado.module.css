@@ -1,0 +1,21 @@
+.paginate {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.btnPaginate {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #B1E8CD;
+    border-radius: 5px;
+    padding: 4px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid black;
+    width: 30px;
+    margin: 0 20px;
+    background-color: darkmagenta;
+    cursor: pointer;
+
+
+}
