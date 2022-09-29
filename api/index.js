@@ -17,6 +17,7 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const { PORT } = require('./src/config.js');
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const {default: axios} = require('axios');
@@ -32,7 +33,7 @@ conn.sync({ force: true }).then(async () => {
             }
     })
   Type.bulkCreate(typeInfo);
-  server.listen(3001, () => {
+  server.listen(PORT, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
