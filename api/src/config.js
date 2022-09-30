@@ -4,7 +4,7 @@ const DB_HOST = process.env.DB_HOST || 'localhost';
 
 const DB_USER = process.env.DB_USER || 'postgres';
 
-const DB_PASSWORD = process.env.DB_HOST || '38772607';
+const DB_PASSWORD = process.env.DB_PASSWORD || '38772607';
 
 const DB_PORT = process.env.DB_PORT || 5432;
 
