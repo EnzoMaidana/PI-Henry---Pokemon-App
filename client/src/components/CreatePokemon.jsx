@@ -12,6 +12,7 @@ export default function CreatePokemon(){
     const history = useHistory();
     const types = useSelector((state) => state.types);
     const pokemonsSelected = useSelector((state) => state.pokemons);
+    //Declaro un estado local para el input del usuario. 
     const [ input, setInput ] = useState({
         name: '',
         life: '',
@@ -34,6 +35,7 @@ export default function CreatePokemon(){
         setErrors(validate(input, pokemonsSelected))
     }, [input, pokemonsSelected]);
 
+    //Funcion para definir el valor de los inputs. 
     function handleChange(e){
         e.preventDefault();
         setInput({
@@ -46,6 +48,7 @@ export default function CreatePokemon(){
         }));
     };
 
+    //Funcion para definir el valor del select para los tipos. 
     function handleSelect(e){
         e.preventDefault();
         if(input.types.length < 2){
@@ -58,6 +61,7 @@ export default function CreatePokemon(){
         }
     };
 
+    //Funcion para resetear los tipos seleccionados por el usuario. 
     function handleReset(){
         setInput({
             ...input,
@@ -65,6 +69,7 @@ export default function CreatePokemon(){
         })
     };
 
+    //Funcion para submitear el input del usuario y despachar la accion para crear un pokemon. 
     function handleSubmit(e){
         e.preventDefault();
         if(

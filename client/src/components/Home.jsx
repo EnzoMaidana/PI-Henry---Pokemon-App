@@ -11,18 +11,19 @@ import NavBar from './NavBar';
 
 export default function Home(){
 
+    //Declaro la variable dispatch para ir despachando mis acciones
     const dispatch = useDispatch();
-
+    //Traigo todos los pokemons del state
     const allPokemons = useSelector((state) => state.pokemons);
-
+    //Traigo todos los types del state
     const allTypes = useSelector((state) => state.types);
 
     //Paginado
-    const[currentPage, setCurrentPage] = useState(1);
-    const[pokemonsPerPage, setPokemonsPerPage] = useState(12);
-    const indexOfLastPokemon = currentPage * pokemonsPerPage;
-    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
+    const[currentPage, setCurrentPage] = useState(1); //Declaro un estado local donde le paso la pagina actual y cual va a ser la pagina actual.
+    const[pokemonsPerPage, setPokemonsPerPage] = useState(12); // Declaro otro estado local que tengo la cant de pokemons por pag y arranca en 12.
+    const indexOfLastPokemon = currentPage * pokemonsPerPage; // Seteo el indice del ultimo pokemon; sobre la pag actual multiplico la cantidad de pokemons por pag. 
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // Seteo el indice del primer pokemon; necesito en cada pagina tener el indice del primero.
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // En donde se va a ir guardando quienes son los pokemons que hay que renderizar dependiendo de la pag. 
 
     const [order,setOrder] = useState("");
 
@@ -30,22 +31,28 @@ export default function Home(){
         setCurrentPage(pageNumber)
     };
 
+    //Me traigo del estado los pokemons y types cuando el componente se monta
     useEffect(() => {
+        //Despacho las acciones 
         dispatch(getPokemons());
         dispatch(getTypes());
+        //
     }, [dispatch]);
 
+    //Funcion para resetear los pokemons
     function handleClick(e){
         e.preventDefault();
         dispatch(getPokemons())
     };
 
+    //Funcion para filtrar por tipo
     function handleFilterByType(e){
         e.preventDefault();
         dispatch(filterByType(e.target.value));
         setCurrentPage(1)
     };
 
+    //Funcion para ordenar por nombre
     function handleFilterByName(e){
         e.preventDefault();
         dispatch(orderByName(e.target.value));
@@ -53,6 +60,7 @@ export default function Home(){
         setCurrentPage(1)
     };
 
+    //Funcion para ordenar por ataque
     function handleFilterByAttack(e){
         e.preventDefault();
         dispatch(orderByAttack(e.target.value));
@@ -60,6 +68,7 @@ export default function Home(){
         setCurrentPage(1)
     };
 
+    //Funcion para filtrar por API o DB
     function handleFilterByCreated(e){
         e.preventDefault();
         dispatch(orderByCreated(e.target.value));

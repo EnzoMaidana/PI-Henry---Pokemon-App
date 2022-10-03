@@ -9,6 +9,7 @@ const getApiInfo = async () => {
         let pokemons = [];
         let url = 'https://pokeapi.co/api/v2/pokemon/';
 
+        //Hago el subrequest para traerme la info de cada pokemon
         do {
             let apiUrl = await axios.get(url);
             let apiInfo = apiUrl.data.results.map((e) => {
@@ -21,7 +22,7 @@ const getApiInfo = async () => {
             url = apiUrl.data.next;
         } while(url !== null && pokemons.length < 40)
 
-
+        //Genero una promesa por cada elemento del arreglo pokemons para traerme solo la informacion necesaria
         let pokemonsData = await Promise.all(
             pokemons.map(async (e) => {
                 let pokemon = await axios.get(e.url);
@@ -50,10 +51,11 @@ const getApiInfo = async () => {
     }
 };
 
-//Traigo la info de la BD
+//Traigo la info de la DB
 
 const getDbInfo = async () => {
     try{
+        //Busco en mi DB los pokemons creados por el usuario
         return await Pokemon.findAll({
             include: {
                 model: Type,
@@ -72,6 +74,7 @@ const getDbInfo = async () => {
 
 const getAllInfo = async () => {
     try{
+        //Concateno la info de la API junto con la info de la DB
         const apiInfo = await getApiInfo();
         const dbInfo = await getDbInfo();
 

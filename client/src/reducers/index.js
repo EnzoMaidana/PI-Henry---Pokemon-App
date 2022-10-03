@@ -1,3 +1,5 @@
+//Defino el estado inicial 
+
 const initialState = {
     pokemons: [],
     allPokemons: [],

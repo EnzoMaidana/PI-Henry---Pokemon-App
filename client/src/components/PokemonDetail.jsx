@@ -12,8 +12,10 @@ export default function Detail(props){
 
     const dispatch = useDispatch();
     const pokeDetail = useSelector((state) => state.pokemonDetail);
+    //Defino la variable id con el valor que me pasa el usuario por params. 
     const id = props.match.params.id
 
+    //Me traigo el detalle del pokemon desde el estado cuando el componente se monta. 
     useEffect(() => {
         dispatch(getPokemonDetail(id));
         return () => {

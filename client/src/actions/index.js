@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+//Despacho las acciones y el payload correspondiente. 
+
 export function getPokemons(){
     return async function(dispatch){
         var pokemons = await axios.get('https://pi-henry-pokemon-app-production.up.railway.app/pokemons');
