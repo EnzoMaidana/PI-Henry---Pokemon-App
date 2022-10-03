@@ -1,10 +1,12 @@
 import axios from 'axios';
+const { API_URL = 'http://localhost:3001' } = process.env
 
 //Despacho las acciones y el payload correspondiente. 
 
 export function getPokemons(){
     return async function(dispatch){
-        var pokemons = await axios.get('https://pi-henry-pokemon-app-production.up.railway.app/pokemons');
+        var pokemons = await axios.get(`${API_URL}/pokemons`);
+        // var pokemons = await axios.get('http://localhost:3001/pokemons');
         return dispatch({
             type: 'GET_POKEMONS',
             payload: pokemons.data,
@@ -14,7 +16,8 @@ export function getPokemons(){
 
 export function getTypes(){
     return async function(dispatch){
-        var types = await axios.get('https://pi-henry-pokemon-app-production.up.railway.app/types');
+        var types = await axios.get(`${API_URL}/types`);
+        // var types = await axios.get('http://localhost:3001/types');
         return dispatch({
             type: 'GET_TYPES',
             payload: types.data,
@@ -53,7 +56,7 @@ export function orderByCreated(payload){
 export function getByName(name){
     return async function(dispatch){
         try{
-            const pokemon = await axios.get(`https://pi-henry-pokemon-app-production.up.railway.app/pokemons?name=${name}`);
+            const pokemon = await axios.get(`${API_URL}/pokemons?name=${name}`);
             return dispatch({
                 type: 'GET_BY_NAME',
                 payload: pokemon.data
@@ -66,7 +69,7 @@ export function getByName(name){
 
 export function createPokemon(value){
     return async function(dispatch){
-        var { data } = await axios.post('https://pi-henry-pokemon-app-production.up.railway.app/pokemons', value);
+        var { data } = await axios.post(`${API_URL}/pokemons`, value);
         return dispatch({
             type: 'CREATE_ACTIVITY',
             value: data
@@ -77,7 +80,7 @@ export function createPokemon(value){
 export function getPokemonDetail(id){
     return async function(dispatch){
         try{
-            const { data } = await axios.get(`https://pi-henry-pokemon-app-production.up.railway.app/pokemons/${id}`);
+            const { data } = await axios.get(`${API_URL}/pokemons/${id}`);
             return dispatch({
                 type: 'GET_POKEMON_DETAIL',
                 payload: data,

@@ -15,7 +15,7 @@ router.get('/pokemons', async (req, res) => {
     try{
         const { name } = req.query;
         const allPokemons = await getAllInfo();
-        //Escribo un condicional para corroborar si me pasan un name por query, de ser asi, filtro el pokemon que coincide con ese name y lo devuelvo, sino envio un status 404 
+        //Si existe name filtro el pokemon que coincide con ese name y lo devuelvo, sino envio un status 404 
         if(name) {
             let pokemonName = allPokemons.filter((e) => e.name.toLowerCase().includes(name.toLowerCase()));
             pokemonName ? res.status(200).send(pokemonName) : res.status(404).send('El pokemon no fue encontrado');  

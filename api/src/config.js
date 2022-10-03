@@ -10,8 +10,6 @@ const DB_PORT = process.env.DB_PORT || 5432;
 
 const DB_NAME = process.env.DB_NAME || 'pokemon';
 
-
-
 module.exports = {
     PORT,
     DB_HOST,

@@ -23,6 +23,7 @@ const { conn } = require('./src/db.js');
 const {default: axios} = require('axios');
 const { Type } = require('./src/db.js');
 
+
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async () => {
 
