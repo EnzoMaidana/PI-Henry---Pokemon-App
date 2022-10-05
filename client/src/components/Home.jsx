@@ -146,7 +146,6 @@ export default function Home(){
                                 img={e.img}
                                 name={e.name}
                                 types={e.types}
-                                createdInDb={e.createdInDb}
                                 />
                             )
                         })
