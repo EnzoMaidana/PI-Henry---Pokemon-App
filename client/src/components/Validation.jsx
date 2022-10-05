@@ -8,7 +8,7 @@ export default function validate(input, pokemonsSelected){
     };
 
     if(input.name.length <= 2) {
-        errors.name = '*The name must have at least 2 letters';
+        errors.name = '*The name must have at least 3 letters';
     }
 
     if(pokemonsSelected?.filter((e) => input.name === e.name).length !== 0) {

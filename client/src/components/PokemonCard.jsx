@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import s from '../styles/PokemonCard.module.css';
 
-export default function PokemonCard({id, img, name, types }){
+export default function PokemonCard({id, img, name, types, createdInDb }){
     return(
         <div className={s.countryCard}>
             <div className={s.card}>
