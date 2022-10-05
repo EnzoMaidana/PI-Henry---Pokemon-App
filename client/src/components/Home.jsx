@@ -76,9 +76,6 @@ export default function Home(){
         setCurrentPage(1);
     };
 
-
-
-
     return(
             <div className={s.container}>
                 <NavBar/>
