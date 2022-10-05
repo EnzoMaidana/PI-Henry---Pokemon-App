@@ -69,7 +69,7 @@ export function createPokemon(value){
     return async function(dispatch){
         var { data } = await axios.post(`${API_URL}/pokemons`, value);
         return dispatch({
-            type: 'CREATE_POKEMON',
+            type: 'CREATE_ACTIVITY',
             value: data
         })
     }
