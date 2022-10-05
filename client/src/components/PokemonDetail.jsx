@@ -47,7 +47,7 @@ export default function Detail(props){
                                 ''
                             }
                         </li>
-
+                        <li><span>ID:</span>{pokeDetail[0] ? pokeDetail[0].id : ''}</li>
                         <li><span>LIFE:</span>{pokeDetail[0] ? pokeDetail[0].life : ''}</li>
                         <li><span>ATTACK:</span>{pokeDetail[0] ? pokeDetail[0].attack : ''}</li>
                         <li><span>DEFENSE:</span>{pokeDetail[0] ? pokeDetail[0].defense : ''}</li>
