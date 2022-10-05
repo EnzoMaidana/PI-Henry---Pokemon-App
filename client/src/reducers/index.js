@@ -58,7 +58,7 @@ function rootReducer(state = initialState, action){
                 ...state,
                 pokemons: action.payload
             }
-        case 'CREATE_ACTIVITY':
+        case 'CREATE_POKEMON':
             return{
                 ...state,
                 pokemonsCreated: action.payload
