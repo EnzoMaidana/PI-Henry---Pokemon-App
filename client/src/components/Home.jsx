@@ -19,11 +19,11 @@ export default function Home(){
     const allTypes = useSelector((state) => state.types);
 
     //Paginado
-    const[currentPage, setCurrentPage] = useState(1); //Declaro un estado local donde le paso la pagina actual y cual va a ser la pagina actual.
-    const[pokemonsPerPage, setPokemonsPerPage] = useState(12); // Declaro otro estado local que tengo la cant de pokemons por pag y arranca en 12.
-    const indexOfLastPokemon = currentPage * pokemonsPerPage; // Seteo el indice del ultimo pokemon; sobre la pag actual multiplico la cantidad de pokemons por pag. 
-    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // Seteo el indice del primer pokemon; necesito en cada pagina tener el indice del primero.
-    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // En donde se va a ir guardando quienes son los pokemons que hay que renderizar dependiendo de la pag. 
+    const[currentPage, setCurrentPage] = useState(1); 
+    const[pokemonsPerPage, setPokemonsPerPage] = useState(12); 
+    const indexOfLastPokemon = currentPage * pokemonsPerPage;  
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; 
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);  
 
     const [order,setOrder] = useState("");
 
