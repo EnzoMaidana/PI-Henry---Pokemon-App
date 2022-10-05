@@ -11,7 +11,9 @@ export default function PokemonCard({id, img, name, types }){
                     {
                         types.map((e) => {
                             return(
-                                <h3 key={e.id} className={s.textCard}>{e.name.charAt(0).toUpperCase() + e.name.slice(1)}</h3>
+                                <h3 key={e.id} className={s.textCard}>
+                                    {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
+                                </h3>
                             )
                         })
                     }

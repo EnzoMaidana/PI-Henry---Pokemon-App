@@ -89,12 +89,13 @@ export default function Home(){
                     {/* Filtro por tipo */}
                     <div className={s.filter}>
                         <select onChange={(e) => handleFilterByType(e)} className={s.filselect}>
+                            <option>Filter by type</option>
                             <option value='all'>All</option>
                             {
                                 allTypes?.map((e) => {
                                     return(
                                         <option value={e.name} key={e.id}>
-                                            {e.name}
+                                            {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
                                         </option>
                                     )
                                 })
@@ -104,6 +105,7 @@ export default function Home(){
                     {/* Filtro por nombre */}
                     <div className={s.filter}>
                         <select onChange={(e) => handleFilterByName(e)} className={s.filselect}>
+                            <option>Order by name</option>
                             <option value='asc'>A-Z</option>
                             <option value='desc'>Z-A</option>
                         </select>
@@ -111,6 +113,7 @@ export default function Home(){
                     {/* Filtro por ataque */}
                     <div className={s.filter}>
                         <select onChange={(e) => handleFilterByAttack(e)} className={s.filselect}>
+                            <option>Filter by attack</option>
                             <option value='ataAsc'>More attack</option>
                             <option value='ataDesc'>Less attack</option>
                         </select>
@@ -118,6 +121,7 @@ export default function Home(){
                     {/* Filtro por creacion */}
                     <div className={s.filter}>
                         <select onChange={(e) => handleFilterByCreated(e)} className={s.filselect}>
+                            <option>Filter by creation</option>
                             <option value='all'>All</option>
                             <option value='api'>API</option>
                             <option value='created'>Created</option>
