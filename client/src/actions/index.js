@@ -1,5 +1,5 @@
 import axios from 'axios';
-const { API_URL = 'http://localhost:3001' } = process.env
+const { API_URL } = process.env
 
 //Despacho las acciones y el payload correspondiente. 
 

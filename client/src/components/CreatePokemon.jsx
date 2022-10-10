@@ -23,6 +23,7 @@ export default function CreatePokemon(){
         weight: '',
         types: [],
         img: '',
+        evolution: '',
     });
     const [errors, setErrors] = useState({})
 
@@ -68,6 +69,14 @@ export default function CreatePokemon(){
             types: []
         })
     };
+
+    function handleSelectEvolution(e){
+        e.preventDefault();
+        setInput({
+            ...input,
+            evolution: e.target.value
+        })
+    }
 
     //Funcion para submitear el input del usuario y despachar la accion para crear un pokemon. 
     function handleSubmit(e){
@@ -194,10 +203,7 @@ export default function CreatePokemon(){
                             onChange={(e) => handleChange(e)}
                         />
                         {errors.weight && <p className={s.error}>{errors.weight}</p>}
-                    </div>
-
-                   
-
+                    </div>          
                     <div className={s.selectContainer}>
                         <label >TYPES:</label>
                         <select onChange={(e) => handleSelect(e)}>

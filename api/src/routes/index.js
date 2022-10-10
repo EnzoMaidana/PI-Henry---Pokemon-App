@@ -64,7 +64,7 @@ router.post('/pokemons', async (req, res) => {
             speed, 
             height, 
             weight, 
-            img, 
+            img,
             types,
             createInDb} = req.body
         
