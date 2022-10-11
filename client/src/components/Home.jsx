@@ -91,8 +91,8 @@ export default function Home(){
                             {
                                 allTypes?.map((e) => {
                                     return(
-                                        <option value={e.name} key={e.id}>
-                                            {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
+                                        <option value={e?.name} key={e?.id}>
+                                            {e?.name.charAt(0).toUpperCase() + e?.name.slice(1)}
                                         </option>
                                     )
                                 })    
@@ -138,11 +138,11 @@ export default function Home(){
                     currentPokemons?.map((e) => {
                             return(
                                 <PokemonCard 
-                                key={e.id}
-                                id={e.id}
-                                img={e.img}
-                                name={e.name}
-                                types={e.types}
+                                key={e?.id}
+                                id={e?.id}
+                                img={e?.img}
+                                name={e?.name}
+                                types={e?.types}
                                 />
                             )
                         })
