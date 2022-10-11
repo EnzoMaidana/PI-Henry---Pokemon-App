@@ -1,5 +1,5 @@
 import axios from 'axios';
-const { API_URL } = process.env
+const  API_URL  = process.env.API_URL
 
 //Despacho las acciones y el payload correspondiente. 
 
