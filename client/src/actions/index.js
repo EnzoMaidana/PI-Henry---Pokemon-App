@@ -5,7 +5,7 @@ const  API_URL  = process.env.API_URL
 
 export function getPokemons(){
     return async function(dispatch){
-        var pokemons = await axios.get('https://pi-henry-pokemon-app-production.up.railway.app/pokemons');
+        var pokemons = await axios.get(API_URL + '/pokemons');
         return dispatch({
             type: 'GET_POKEMONS',
             payload: pokemons.data,
@@ -15,7 +15,7 @@ export function getPokemons(){
 
 export function getTypes(){
     return async function(dispatch){
-        var types = await axios.get('https://pi-henry-pokemon-app-production.up.railway.app/types');
+        var types = await axios.get(API_URL + '/types');
         return dispatch({
             type: 'GET_TYPES',
             payload: types.data,
