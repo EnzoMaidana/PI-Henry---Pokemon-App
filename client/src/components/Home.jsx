@@ -89,15 +89,13 @@ export default function Home(){
                             <option>Filter by type</option>
                             <option value='all'>All</option>
                             {
-                                allTypes ? allTypes.map((e) => {
+                                allTypes?.map((e) => {
                                     return(
                                         <option value={e.name} key={e.id}>
                                             {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
                                         </option>
                                     )
-                                })
-                                :
-                                ''
+                                })    
                             }
                         </select>
                     </div>
